@@ -1,0 +1,235 @@
+/* Importa uma fonte mais robusta para títulos */
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@400;500&display=swap");
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  /* Fundo verde escuro, simulando grama */
+  background-color: #0a3d1b;
+  background-image: linear-gradient(315deg, #0a3d1b 0%, #0c5a27 74%);
+  color: #f0f2f5;
+  min-height: 100vh;
+}
+
+/* Container principal */
+.app-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px 15px;
+}
+
+h1 {
+  font-family: "Oswald", sans-serif;
+  text-align: center;
+  color: #ffffff;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Formulário para adicionar jogador */
+.add-player-form {
+  display: flex;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.add-player-input {
+  flex-grow: 1;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.add-player-button {
+  padding: 0 18px;
+  border-radius: 6px;
+  border: none;
+  background-color: #28a745; /* Verde vibrante */
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.add-player-button:hover {
+  background-color: #218838;
+}
+
+/* Container da lista */
+.player-list-container {
+  background-color: #ffffff;
+  color: #333;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  overflow: hidden; /* Garante que os cantos arredondados sejam aplicados a tudo */
+}
+
+.header {
+  text-align: center;
+  padding: 16px;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #ddd;
+}
+
+.header h2 {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.4rem;
+  color: #1c1e21;
+}
+
+.confirmados-count {
+  font-size: 1rem;
+  color: #606770;
+  margin-top: 4px;
+}
+
+/* Lista de jogadores */
+.player-list {
+  list-style-type: none;
+}
+
+.player-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e9ecef;
+  transition: background-color 0.3s;
+}
+.player-item.presente {
+  background-color: #e8f5e9; /* Verde bem claro para destacar presentes */
+}
+.player-item:last-child {
+  border-bottom: none;
+}
+
+.player-name {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.player-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Input de pagamento */
+.payment-input-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: #f0f2f5;
+  border-radius: 6px;
+  padding: 0 8px;
+}
+.payment-input-wrapper span {
+  font-weight: bold;
+  color: #888;
+}
+.payment-input {
+  width: 60px;
+  padding: 8px 4px;
+  border: none;
+  background-color: transparent;
+  font-size: 1rem;
+  text-align: right;
+}
+.payment-input:focus {
+  outline: none;
+}
+/* Esconde as setas do input number */
+.payment-input::-webkit-outer-spin-button,
+.payment-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.payment-input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Botões */
+button {
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 8px 12px;
+  border: 1px solid transparent;
+  min-width: 110px; /* Garante que os botões tenham um tamanho mínimo parecido */
+  text-align: center;
+}
+
+/* Estado 1: Cinza para quem não confirmou */
+.button-pendente {
+  background-color: #e4e6eb;
+  color: #333;
+  border-color: #ccc;
+}
+
+/* Estado 2: Laranja para quem confirmou mas não pagou */
+.button-pendente-pagamento {
+  background-color: #ffc107; /* Cor de alerta/amarelo */
+  color: #212529; /* Texto escuro para bom contraste */
+  border-color: #e0ac00;
+}
+
+/* Estado 3: Verde para quem pagou */
+.button-pago {
+  background-color: #28a745;
+  color: #ffffff;
+  border-color: #28a745;
+  font-size: 1rem;
+}
+
+/* Rodapé com o total */
+.summary-footer {
+  padding: 20px;
+  text-align: center;
+  background-color: #212529; /* Preto/Cinza escuro */
+  color: #fff;
+  border-top: 4px solid #28a745; /* Linha verde de destaque */
+}
+
+.summary-footer h3 {
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #eee;
+}
+
+.total-amount {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #28a745; /* Total em verde destacado */
+}
+
+/* Estilos para o Avatar e alinhamento do nome */
+.player-info {
+  display: flex;
+  align-items: center;
+  /* Isso faz com que esta div ocupe o espaço disponível,
+     empurrando as ações para a direita */
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.player-avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%; /* Deixa a imagem redonda */
+  margin-right: 12px;
+  background-color: #e9ecef; /* Cor de fundo enquanto a imagem carrega */
+  border: 2px solid #ffffff; /* Borda branca para destacar do fundo */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
