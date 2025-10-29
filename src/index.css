@@ -233,3 +233,150 @@ button {
   border: 2px solid #ffffff; /* Borda branca para destacar do fundo */
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
+
+/* --- Estilos para a Seção Formar Times --- */
+
+.formar-times-section {
+  padding: 20px 16px;
+  text-align: center;
+  border-top: 1px solid #e9ecef;
+  border-bottom: 1px solid #e9ecef;
+  background-color: #f8f9fa;
+}
+
+.formar-times-button {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.2rem;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.formar-times-button:hover {
+  background-color: #0056b3;
+}
+
+.formar-times-button:active {
+  transform: scale(0.98);
+}
+
+.formar-times-button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* --- Estilos para Exibição dos Times --- */
+
+.times-container {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.time-card {
+  background-color: #ffffff;
+  color: #333;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.time-card h3 {
+  font-family: "Oswald", sans-serif;
+  text-align: center;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #eee;
+}
+
+.time-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.time-list li {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  font-size: 1rem;
+}
+
+.player-avatar-small {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background-color: #f0f0f0;
+}
+
+/* Para a seção de reservas ocupar as duas colunas */
+.reservas-card {
+  grid-column: 1 / -1;
+}
+
+/* --- Estilos para Goleiro --- */
+.goleiro-icon {
+  margin-left: 8px;
+  font-size: 1.2rem;
+  cursor: default;
+}
+
+.goleiro-button {
+  background-color: #f0f2f5;
+  border: 1px solid #ccc;
+  color: #333;
+  padding: 8px;
+  min-width: auto;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.goleiro-button.is-goleiro {
+  background-color: #ffd700; /* Dourado para destacar */
+  border-color: #e0ac00;
+}
+/* ... código CSS anterior ... */
+
+/* Ajuste no alinhamento das AÇÕES para caber o novo botão */
+.player-actions {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Mantém um pequeno espaço entre os elementos */
+}
+
+/* NOVO ESTILO: Botão de remover (X) - Pequeno e simples */
+.button-remover {
+  /* Substitua este bloco pelo estilo original do button-remover */
+  background-color: transparent; /* Fundo transparente */
+  color: #dc3545; /* Cor vermelha para o "X" */
+  border: none; /* Sem borda */
+  padding: 0; /* Remove padding */
+  min-width: 20px; /* Garante que tenha uma área mínima para toque */
+  width: 20px;
+  height: 20px;
+  font-size: 1.2rem; /* Mantém o X visível */
+  line-height: 1; /* Alinha o X no centro */
+  font-weight: normal; /* Deixa o X mais discreto */
+  opacity: 0.7; /* Suaviza um pouco a cor */
+  transition: opacity 0.2s, color 0.2s;
+}
+
+.button-remover:hover {
+  background-color: transparent;
+  color: #c82333; /* Vermelho mais escuro no hover */
+  opacity: 1;
+}
+
+/* Ajuste adicional para alinhar o X verticalmente se necessário, dependendo do browser */
+.player-item {
+  /* Alinha todos os itens verticalmente ao centro */
+  align-items: center;
+}
