@@ -118,10 +118,11 @@ h1 {
   font-weight: 500;
 }
 
+/* CORREÇÃO: Reduz gap para mobile */
 .player-actions {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 5px; /* Reduzido para melhor ajuste */
 }
 
 /* Input de pagamento */
@@ -157,7 +158,7 @@ h1 {
   -moz-appearance: textfield;
 }
 
-/* Botões */
+/* Botões base */
 button {
   border-radius: 6px;
   font-weight: bold;
@@ -165,7 +166,7 @@ button {
   transition: all 0.2s ease;
   padding: 8px 12px;
   border: 1px solid transparent;
-  min-width: 110px; /* Garante que os botões tenham um tamanho mínimo parecido */
+  min-width: unset; /* CORREÇÃO: Remove o min-width: 110px para permitir botões menores */
   text-align: center;
 }
 
@@ -174,6 +175,7 @@ button {
   background-color: #e4e6eb;
   color: #333;
   border-color: #ccc;
+  min-width: 90px; /* Novo min-width para o botão de status */
 }
 
 /* Estado 2: Laranja para quem confirmou mas não pagou */
@@ -181,6 +183,7 @@ button {
   background-color: #ffc107; /* Cor de alerta/amarelo */
   color: #212529; /* Texto escuro para bom contraste */
   border-color: #e0ac00;
+  min-width: 90px;
 }
 
 /* Estado 3: Verde para quem pagou */
@@ -189,6 +192,7 @@ button {
   color: #ffffff;
   border-color: #28a745;
   font-size: 1rem;
+  min-width: 90px;
 }
 
 /* Rodapé com o total */
@@ -218,8 +222,6 @@ button {
 .player-info {
   display: flex;
   align-items: center;
-  /* Isso faz com que esta div ocupe o espaço disponível,
-     empurrando as ações para a direita */
   flex-grow: 1;
   margin-right: 10px;
 }
@@ -234,149 +236,91 @@ button {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-/* --- Estilos para a Seção Formar Times --- */
+/* -------------------------------------- */
+/* --- NOVOS ESTILOS PARA FUNCIONALIDADES --- */
+/* -------------------------------------- */
 
-.formar-times-section {
-  padding: 20px 16px;
-  text-align: center;
-  border-top: 1px solid #e9ecef;
-  border-bottom: 1px solid #e9ecef;
-  background-color: #f8f9fa;
-}
-
-.formar-times-button {
-  width: 100%;
-  padding: 15px;
-  font-size: 1.2rem;
-  font-family: "Oswald", sans-serif;
-  text-transform: uppercase;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.2s, transform 0.1s;
-}
-
-.formar-times-button:hover {
-  background-color: #0056b3;
-}
-
-.formar-times-button:active {
-  transform: scale(0.98);
-}
-
-.formar-times-button:disabled {
-  background-color: #6c757d;
-  cursor: not-allowed;
-  opacity: 0.7;
-}
-
-/* --- Estilos para Exibição dos Times --- */
-
-.times-container {
-  margin-top: 24px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-.time-card {
-  background-color: #ffffff;
-  color: #333;
-  border-radius: 12px;
-  padding: 16px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.time-card h3 {
-  font-family: "Oswald", sans-serif;
-  text-align: center;
-  margin-bottom: 12px;
-  padding-bottom: 8px;
-  border-bottom: 2px solid #eee;
-}
-
-.time-list {
-  list-style-type: none;
-  padding: 0;
-}
-
-.time-list li {
+/* NOVO ESTILO: Container para alinhar os botões de Ação Global (WhatsApp/Times) */
+.action-buttons-container {
   display: flex;
-  align-items: center;
-  padding: 8px 0;
-  font-size: 1rem;
+  gap: 10px; /* Espaço entre os botões */
+  margin-bottom: 15px;
 }
 
-.player-avatar-small {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  margin-right: 10px;
-  background-color: #f0f0f0;
+.action-buttons-container button {
+  flex-grow: 1;
+  width: 100%; /* Garante que o flex-grow funcione */
+  margin-bottom: 0 !important;
 }
 
-/* Para a seção de reservas ocupar as duas colunas */
-.reservas-card {
-  grid-column: 1 / -1;
-}
-
-/* --- Estilos para Goleiro --- */
-.goleiro-icon {
-  margin-left: 8px;
-  font-size: 1.2rem;
-  cursor: default;
-}
-
-.goleiro-button {
-  background-color: #f0f2f5;
-  border: 1px solid #ccc;
-  color: #333;
-  padding: 8px;
-  min-width: auto;
-  font-size: 1.2rem;
-  line-height: 1;
-}
-
-.goleiro-button.is-goleiro {
-  background-color: #ffd700; /* Dourado para destacar */
-  border-color: #e0ac00;
-}
-/* ... código CSS anterior ... */
-
-/* Ajuste no alinhamento das AÇÕES para caber o novo botão */
-.player-actions {
-  display: flex;
-  align-items: center;
-  gap: 5px; /* Mantém um pequeno espaço entre os elementos */
-}
-
-/* NOVO ESTILO: Botão de remover (X) - Pequeno e simples */
+/* ESTILO: Botão de remover (X) - Pequeno e discreto para mobile */
 .button-remover {
-  /* Substitua este bloco pelo estilo original do button-remover */
-  background-color: transparent; /* Fundo transparente */
-  color: #dc3545; /* Cor vermelha para o "X" */
-  border: none; /* Sem borda */
-  padding: 0; /* Remove padding */
-  min-width: 20px; /* Garante que tenha uma área mínima para toque */
+  background-color: transparent;
+  color: #dc3545; /* Vermelho para o "X" */
+  border: none;
+  padding: 0;
+  min-width: 20px;
   width: 20px;
   height: 20px;
-  font-size: 1.2rem; /* Mantém o X visível */
-  line-height: 1; /* Alinha o X no centro */
-  font-weight: normal; /* Deixa o X mais discreto */
-  opacity: 0.7; /* Suaviza um pouco a cor */
+  font-size: 1rem;
+  line-height: 1;
+  font-weight: normal;
+  opacity: 0.7;
   transition: opacity 0.2s, color 0.2s;
 }
 
 .button-remover:hover {
   background-color: transparent;
-  color: #c82333; /* Vermelho mais escuro no hover */
+  color: #c82333;
   opacity: 1;
 }
 
-/* Ajuste adicional para alinhar o X verticalmente se necessário, dependendo do browser */
-.player-item {
-  /* Alinha todos os itens verticalmente ao centro */
+/* ESTILOS: Botão de Goleiro (Luva) - Compacto e CENTRALIZADO */
+.button-goleiro-inativo,
+.button-goleiro-ativo {
+  padding: 6px 8px;
+  min-width: 30px !important;
+  width: 30px;
+  height: 30px;
+  font-size: 1rem;
+
+  /* CORREÇÃO PARA CENTRALIZAÇÃO PERFEITA */
+  display: flex;
+  justify-content: center;
   align-items: center;
+  line-height: 1;
+
+  border: 1px solid transparent;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+/* Estado Inativo: Cinza discreto */
+.button-goleiro-inativo {
+  background-color: #e9ecef;
+  color: #6c757d;
+  border-color: #adb5bd;
+}
+
+.button-goleiro-inativo:hover {
+  background-color: #ced4da;
+}
+
+/* Estado Ativo: Amarelo de destaque */
+.button-goleiro-ativo {
+  background-color: #ffc107;
+  color: #333;
+  border-color: #e0ac00;
+}
+
+.button-goleiro-ativo:hover {
+  background-color: #e0ac00;
+  color: #fff;
+}
+
+/* ESTILO: Ícone de luva que aparece ao lado do nome */
+.goalkeeper-icon {
+  font-size: 1.2rem;
+  margin-right: 5px;
+  color: #ffc107;
 }
